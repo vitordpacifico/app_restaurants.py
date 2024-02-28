@@ -26,8 +26,9 @@ def listar_restaurantes():
     for restaurante in restaurantes:
         print(f"Nome: {restaurante['nome']}")
         print(f"Categoria: {restaurante['categoria']}")
+        ativo = "ativado" if restaurante["ativo"] else "desativado"
         print(f"Ativo: {'Sim' if restaurante['ativo'] else 'Não'}")
-        print("-" * 20)  # Linha separadora para melhor visualização
+        print("-" * 20) 
 
     input("\nDigite uma tecla para voltar ao menu principal.")
     main()
@@ -38,7 +39,7 @@ def alternar_estado_restaurante():
     restaurante_encontrado = False
 
     for restaurante in restaurantes:
-        if nome_restaurante == restaurante["nome"]:
+        if nome_restaurante.lower() == restaurante["nome"].lower():
             restaurante_encontrado = True
             restaurante["ativo"] = not restaurante["ativo"]
             mensagem = f"O restaurante {nome_restaurante} foi ativado com sucesso!" if restaurante["ativo"] else f"O restaurante {nome_restaurante} foi desativado com sucesso!"
