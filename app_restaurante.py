@@ -23,12 +23,14 @@ def cadastrar_novo_restaurante():
 
 def listar_restaurantes():
     exibir_subtitulo("Listando Restaurantes")
+
+    print(f"{'Nome do Restaurante'.ljust(30)} | {'Categoria'.ljust(20)} | {'Status'.ljust(10)}")
+    print("-" * 70)
     for restaurante in restaurantes:
-        print(f"Nome: {restaurante['nome']}")
-        print(f"Categoria: {restaurante['categoria']}")
-        ativo = "ativado" if restaurante["ativo"] else "desativado"
-        print(f"Ativo: {'Sim' if restaurante['ativo'] else 'Não'}")
-        print("-" * 20) 
+        nome_formatado = restaurante['nome'].ljust(30)
+        categoria_formatada = restaurante['categoria'].ljust(20)
+        status_formatado = 'Ativo' if restaurante['ativo'] else 'Inativo'
+        print(f"{nome_formatado} | {categoria_formatada} | {status_formatado.ljust(20)}")
 
     input("\nDigite uma tecla para voltar ao menu principal.")
     main()
