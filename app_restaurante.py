@@ -17,7 +17,7 @@ def cadastrar_novo_restaurante():
     INPUTS:
     -Nome do restaurante.
     -Categoria.
-    OUTPUT::
+    OUTPUT:
     -Adiciona um novo restaurante a lista dos restaurantes.
     """
     exibir_subtitulo("Cadastrar Novo Restaurante")
