@@ -6,12 +6,20 @@ def exibir_nome_do_programa():
     print('𝒮𝒶𝒷𝑜𝓇 𝐸𝓍𝓅𝓇𝑒𝓈𝓈𝑜\n')
 
 def exibir_opcoes():
+    """Função responsável por exibir as funções básicas da aplicação."""
     print("1. Cadastrar Restaurante")
     print("2. Listar Restaurantes")
     print("3. Ativar/Desativar Restaurante")
     print("4. Sair\n")
 
 def cadastrar_novo_restaurante():
+    """Essa função é responsável por cadastrar um novo restaurante.
+    INPUTS:
+    -Nome do restaurante.
+    -Categoria.
+    OUTPUT::
+    -Adiciona um novo restaurante a lista dos restaurantes.
+    """
     exibir_subtitulo("Cadastrar Novo Restaurante")
     nome_do_restaurante = input("Nome do restaurante que deseja cadastrar: ")
     categoria = input(f"Digite o nome da categoria do restaurante {nome_do_restaurante}: ")
@@ -22,8 +30,8 @@ def cadastrar_novo_restaurante():
     main()
 
 def listar_restaurantes():
+    """Essa função é a responsável por listar os restaurantes."""
     exibir_subtitulo("Listando Restaurantes")
-
     print(f"{'Nome do Restaurante'.ljust(30)} | {'Categoria'.ljust(20)} | {'Status'.ljust(10)}")
     print("-" * 70)
     for restaurante in restaurantes:
@@ -36,6 +44,7 @@ def listar_restaurantes():
     main()
 
 def alternar_estado_restaurante():
+    """Essa função alterna o estado dos restaurantes.(ativa e desativa.)"""
     exibir_subtitulo("Alternando o estado do restaurante")
     nome_restaurante = input("Digite o nome do restaurante que deseja alternar o estado:")
     restaurante_encontrado = False
@@ -91,3 +100,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+    
